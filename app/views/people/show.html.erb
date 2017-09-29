@@ -1,0 +1,45 @@
+<br><br><br><br><br>
+<div class="container">
+  <div class="jumbotron bg-light">
+    <div class="row">
+      <div class="col-5 text-center">
+        <%= image_tag @person.avatar, width: 260, class: 'rounded-circle' %>
+      </div>
+
+      <div class="col-7">
+        <table class="table">
+          <tr>
+            <th>姓名：</th>
+            <td><%= @person.name %></td>
+          </tr>
+          <tr>
+            <th>性别：</th>
+            <td><%= @person.gender %></td>
+          </tr>
+          <tr>
+            <th>邮箱：</th>
+            <td><%= @person.email %></td>
+          </tr>
+          <tr>
+            <th>入学年：</th>
+            <td><%= @person.period %></td>
+          </tr>
+          <tr>
+            <th>GitHub：</th>
+            <td><%= link_to "#{@person.name}的 Github", @person.github, target: '_blank' %></td>
+          </tr>
+          <tr>
+            <th>个人博客：</th>
+            <td><%= link_to "#{@person.name}的 Blog", @person.blog, target: '_blank' %></td>
+          </tr>
+          <tr>
+            <th>兴趣方向：</th>
+            <td><%= @person.interest %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+

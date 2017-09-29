@@ -1,0 +1,27 @@
+<br><br><br><br><br>
+<div class="container">
+  <% if @people.count > 0 %>
+      <% @people.each do |item| %>
+          <button type="button" class="btn btn-info btn-block"><%= item[0] %></button>
+          <div class="jumbotron bg-light">
+            <div class="row">
+              <% item[1].each do |person| %>
+                  <div class="col-sm-3 my-3">
+                    <a href="<%= person_path(person) %>">
+                    <%= image_tag person.avatar, class: 'card-img-top' %>
+                      </a>
+                    <div class="card-body bg-white">
+                      <p class="card-text">
+                        <%= person.name %><br>
+                        <%= person.interest %><br>
+                        <%= person.period %><br>
+                        <%= person.email %>
+                      </p>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+      </div>
+  <% end %>

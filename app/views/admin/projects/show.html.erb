@@ -1,0 +1,22 @@
+<div class="container">
+  <%= link_to 'Edit', edit_admin_project_path(@project), class: 'btn btn-sm btn-secondary' %>
+  <%= link_to 'Back', admin_projects_path, class: 'btn btn-sm btn-secondary' %>
+  <br><br>
+
+  <div class="jumbotron">
+
+    <div class="text-right">
+      <small class="text-muted"><%= time_ago_in_words @project.updated_at %> ago</small>
+    </div>
+    <div class="text-center">
+      <h3><%= @project.name %></h3>
+    </div>
+
+    <p class="text-muted"><%= @project.intro %></p>
+    <hr class="bg-info">
+
+    <p><%= @project.content.html_safe %></p>
+  </div>
+
+</div>
+

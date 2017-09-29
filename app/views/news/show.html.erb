@@ -1,0 +1,19 @@
+<br><br><br><br><br>
+<div class="container jumbotron bg-light">
+  <p class="text-muted"><%= @news.created_at.to_date %></p>
+
+  <div class="text-center"><h3><%= @news.title %></h3></div>
+
+  <p class="text-muted my-5"><%= @news.brief %></p>
+
+  <p><%= @news.content.html_safe %></p>
+
+</div>
+<br>
+<br>
+<% if @news.previous %>
+    <a id="newer" class="blog-nav" href="<%= news_path(@news.previous) %>">&lt;&nbsp;NEWER</a>
+<% end %>
+<% if @news.next %>
+    <a id="older" class="blog-nav" href="<%= news_path(@news.next) %>">OLDER&nbsp;&gt;</a>
+<% end %>

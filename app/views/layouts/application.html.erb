@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IotDesignClub</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-sm-3 col-md-3 d-none d-sm-block bg-light sidebar">
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item my-3 text-center">
+          <%= image_tag 'avatar.png', class: 'rounded-circle', width: 60 %><br>
+          hyekyoz@outlook.com
+        </li>
+        <li class="nav-item my-2">
+          <%= link_to 'Slides', admin_slides_path, class: 'nav-link btn btn-block btn-outline-info' %>
+        </li>
+        <li class="nav-item my-2">
+          <%= link_to 'News', admin_news_index_path, class: 'nav-link btn btn-block btn-outline-info' %>
+        </li>
+        <li class="nav-item my-2">
+          <%= link_to 'People', admin_people_path, class: 'nav-link btn btn-block btn-outline-info' %>
+        </li>
+        <li class="nav-item my-2">
+          <%= link_to 'Projects', admin_projects_path, class: 'nav-link btn btn-block btn-outline-info' %>
+        </li>
+      </ul>
+
+    </nav>
+
+    <main class="col-sm-9 ml-sm-auto col-md-9 pt-3" role="main">
+      <%= render 'layouts/info' %>
+
+      <%= yield %>
+
+    </main>
+  </div>
+</div>
+
+
+</body>
+</html>

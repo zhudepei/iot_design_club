@@ -1,0 +1,36 @@
+<%= form_with(model: [:admin, project], local: true) do |form| %>
+    <% if project.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+          <ul>
+            <% project.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group row field">
+      <%= form.label :name, '项目名：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.text_field :name, id: :project_name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group row field">
+      <%= form.label :intro, '项目简介：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.text_field :intro, id: :project_intro, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :content, '项目详情：' %>
+      <%= form.cktext_area :content, ckeditor: { language: 'zh', toolbar: 'Full' }, id: :project_content %>
+    </div>
+
+    <div class="text-right actions">
+      <%= form.submit '确认', class: 'btn btn-info' %>
+    </div>
+<% end %>

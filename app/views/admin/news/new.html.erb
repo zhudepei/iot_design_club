@@ -1,0 +1,11 @@
+<div class="container">
+  <%= link_to 'Back', admin_news_index_path, class: 'btn btn-sm btn-secondary' %>
+  <br><br>
+
+  <button type="button" class="btn btn-lg btn-info btn-block">New News</button>
+
+  <div class="jumbotron">
+    <%= render 'form', news: @news %>
+  </div>
+</div>
+

@@ -1,0 +1,49 @@
+<div class="contact-image">
+  <br><br><br><br><br><br><br>
+  <div class="container">
+    <div class="jumbotron bg-light">
+      <h1>Contact</h1>
+      <br>
+
+      <%= form_for @message do |form| %>
+          <% if @message.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(message.errors.count, "error") %> prohibited this news from being saved:</h2>
+
+                <ul>
+                  <% message.errors.full_messages.each do |m| %>
+                      <li><%= m %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+
+          <div class="form-group row field">
+            <%= form.label :name, '姓名：', class: 'col-3 col-form-label' %>
+            <div class="col-9">
+              <%= form.text_field :name, id: :message_name, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group row field">
+            <%= form.label :email, '邮箱：', class: 'col-3 col-form-label' %>
+            <div class="col-9">
+              <%= form.email_field :email, id: :message_email, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group row field">
+            <%= form.label :content, '内容：', class: 'col-3 col-form-label' %>
+            <div class="col-9">
+              <%= form.text_area :content, id: :message_content, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="text-right actions">
+            <%= form.submit '确认', class: 'btn btn-info' %>
+          </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

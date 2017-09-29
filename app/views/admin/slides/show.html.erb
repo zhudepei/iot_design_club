@@ -1,0 +1,14 @@
+<div class="container">
+  <%= link_to 'Edit', edit_admin_slide_path(@slide), class: 'btn btn-sm btn-secondary' %>
+  <%= link_to 'Back', admin_slides_path, class: 'btn btn-sm btn-secondary' %>
+  <br><br>
+
+  <img class="card-img-top" src="<%= @slide.picture %>" alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title"><%= @slide.name %></h4>
+    <p class="card-text"><%= @slide.intro %></p>
+  </div>
+
+</div>
+
+

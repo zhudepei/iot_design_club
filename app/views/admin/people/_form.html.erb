@@ -1,0 +1,79 @@
+<%= form_with(model: [:admin, person], local: true) do |form| %>
+    <% if person.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+          <ul>
+            <% person.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="alert alert-warning" role="alert">
+      '*' 项为必填。
+    </div>
+
+    <div class="form-group row field">
+      <%= form.label :name, '*姓名：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.text_field :name, id: :person_name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group row field">
+      <%= form.label :email, '*邮箱：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.text_field :email, id: :person_email, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group row field">
+      <%= form.label :avatar, '*个人头像：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.file_field :avatar, id: :person_avatar, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group row field">
+      <%= form.label :gender, '*性别：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.text_field :gender, id: :person_gender, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group row field">
+      <%= form.label :github, ' Github：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.text_field :github, id: :person_github, class: 'form-control' %>
+        <small class="form-text text-muted">完整的 URL：https://github.com/your_acount</small>
+      </div>
+    </div>
+
+
+    <div class="form-group row field">
+      <%= form.label :blog, ' 个人博客(url)：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.text_field :blog, id: :person_blog, class: 'form-control' %>
+        <small class="form-text text-muted">完整的 URL：http://your_url OR https://your_url</small>
+      </div>
+    </div>
+
+    <div class="form-group row field">
+      <%= form.label :interest, '*兴趣方向：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.text_field :interest, id: :person_interest, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group row field">
+      <%= form.label :period, '*入学年：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.number_field :period, id: :person_period, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="text-right actions">
+      <%= form.submit '确认', class: 'btn btn-info' %>
+    </div>
+<% end %>

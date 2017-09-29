@@ -1,0 +1,14 @@
+<br><br><br><br><br>
+<div class="container jumbotron bg-light">
+
+  <div class="main">
+    <ul>
+      <% @news.each do |news| %>
+          <li>
+            <h3><%= news.created_at.to_date %></h3>
+            <h2><%= link_to news.title, news %></h2>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

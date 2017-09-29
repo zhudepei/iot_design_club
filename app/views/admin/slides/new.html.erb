@@ -1,0 +1,11 @@
+<div class="container">
+  <%= link_to 'Back', admin_slides_path, class: 'btn btn-sm btn-secondary' %>
+  <br><br>
+
+  <button type="button" class="btn btn-lg btn-info btn-block">New Slide</button>
+
+  <div class="jumbotron">
+    <%= render 'form', slide: @slide %>
+  </div>
+
+</div>

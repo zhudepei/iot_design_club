@@ -1,0 +1,12 @@
+<br><br><br><br><br>
+<div class="container jumbotron bg-light">
+  <p class="text-muted"><%= @project.created_at.to_date %></p>
+
+  <div class="text-center"><h3><%= @project.name %></h3></div>
+
+  <p class="text-muted my-5"><%= @project.intro %></p>
+
+  <p><%= @project.content.html_safe %></p>
+
+</div>
+

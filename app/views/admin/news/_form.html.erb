@@ -1,0 +1,36 @@
+<%= form_with(model: [:admin, news], local: true) do |form| %>
+    <% if news.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(news.errors.count, "error") %> prohibited this news from being saved:</h2>
+
+          <ul>
+            <% news.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group row field">
+      <%= form.label :title, '标题：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.text_field :title, id: :news_title, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group row field">
+      <%= form.label :brief, '简述：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.text_field :brief, id: :news_brief, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :content, '内容：' %>
+        <%= form.cktext_area :content, ckeditor: { language: 'zh', toolbar: 'Full'}, id: :news_content %>
+    </div>
+
+    <div class="text-right actions">
+      <%= form.submit '确认', class: 'btn btn-info' %>
+    </div>
+<% end %>

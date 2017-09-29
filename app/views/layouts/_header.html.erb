@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="<%= root_url %>">IOT Design</a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <%= link_to 'HOME', root_url, class: 'nav-item nav-link' %>
+      <a class="nav-item nav-link" href="<%= news_index_path %>">NEWS</a>
+      <a class="nav-item nav-link" href="<%= people_path %>">PEOPLE</a>
+      <a class="nav-item nav-link" href="<%= projects_path %>">PROJECTS</a>
+    </div>
+  </div>
+</nav>

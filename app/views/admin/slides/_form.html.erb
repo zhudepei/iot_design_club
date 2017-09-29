@@ -1,0 +1,38 @@
+<%= form_with(model: [:admin, slide], local: true) do |form| %>
+    <% if slide.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(slide.errors.count, "error") %> prohibited this slide from being saved:</h2>
+
+          <ul>
+            <% slide.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group row field">
+      <%= form.label :name, '图片名：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.text_field :name, id: :slide_intro, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group row field">
+      <%= form.label :intro, '图片介绍：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.text_field :intro, id: :slide_intro, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group row field">
+      <%= form.label :picture, '图片：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.file_field :picture, id: :slide_picture, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class=" text-right actions">
+      <%= form.submit '确认', class: 'btn btn-info' %>
+    </div>
+<% end %>

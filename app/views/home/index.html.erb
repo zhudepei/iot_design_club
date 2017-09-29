@@ -1,0 +1,83 @@
+<% if @slides.count > 0 %>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+
+        <% @slides.each_with_index do |slide, index| %>
+            <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+        <% end %>
+      </ol>
+      <div class="carousel-inner">
+        <% @slides.each_with_index do |slide, index| %>
+            <div class="carousel-item <%= 'active' if index == 0 %>">
+              <%= image_tag slide.picture, class: 'd-block w-100' %>
+              <div class="carousel-caption d-none d-md-block">
+                <h2><%= slide.name %></h2>
+                <p><%= slide.intro %></p>
+              </div>
+            </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+<% end %>
+<br>
+<div class="difference-image">
+  <div class="jumbotron bg-light">
+    <div class="container text-center">
+      <h1 class="text-muted">MAKE A DIFFERENCE</h1>
+      <p class="text-muted">
+        我们每一个人都是产品经理和极客，单纯而坚定，苛求而执着，认真打磨每一件产品到极致，用迸发的创造力与指尖飞舞的代码一点点的改变世界!
+      </p>
+    </div>
+    <br>
+  </div>
+</div>
+
+<br>
+<div class="design-image">
+  <div class="jumbotron bg-light">
+    <div class="container">
+      <h1 class="text-muted">DESIGN & CODING</h1>
+      <p class="text-muted">物联网设计俱乐部(IOT Design Club)是一个年轻充满活力的俱乐部</p>
+    </div>
+    <br>
+  </div>
+</div>
+
+<br>
+<div class="people-image">
+  <div class="jumbotron bg-light">
+    <div class="container-fluid">
+      <div class="container text-right">
+        <h1 class="text-muted">COMMUNITY</h1>
+        <p class="text-muted">
+          俱乐部指导老师是冯伟老师，现有成员20余人，同时，也与设计学院和校内外的互联网创业团队和公司开展了充分合作与交流。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="projects-image">
+  <div class="jumbotron bg-light">
+    <div class="container-fluid">
+      <div class="container">
+        <h1 class="text-muted">PROJECTS</h1>
+        <p class="text-muted">
+          积极参加物联网设计，ICAN，服务外包等相关学科竞赛，并取得不错的成绩。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= render 'layouts/footer' %>
