@@ -1,5 +1,6 @@
 class Admin::SlidesController < ApplicationController
   before_action :set_slide, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @slides = Slide.all

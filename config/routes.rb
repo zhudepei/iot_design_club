@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
-  get 'people/index'
-
-  get 'people/show'
 
   root 'home#index'
 
-  get 'dashboard/', to: 'dashboard#index'
+  get 'admin', to: 'dashboard#index'
 
   resources :news, only: [:index, :show]
   resources :people, only: [:index, :show]
