@@ -25,25 +25,25 @@
 }
 
 .design-image {
-  background: url("design.jpg") center top no-repeat;
+  background: image-url("design.jpg") center top no-repeat;
   background-size: cover;
   height: 600px;
 }
 
 .difference-image {
-  background: url("difference.png") center top no-repeat;
+  background: image-url("difference.png") center top no-repeat;
   background-size: cover;
   height: 600px;
 }
 
 .people-image {
-  background: url("team.jpg") center top no-repeat;
+  background: image-url("team.jpg") center top no-repeat;
   background-size: cover;
   height: 600px;
 }
 
 .projects-image {
-  background: url("projects.png") center top no-repeat;
+  background: image-url("projects.png") center top no-repeat;
   background-size: cover;
   height: 600px;
 }
