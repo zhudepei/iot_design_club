@@ -1,3 +1,11 @@
+<style>
+  a {
+    color: #000;
+  }
+     a:hover {
+       color: #dc3545;
+     }
+</style>
 <br><br><br><br><br>
 <div class="container">
   <div class="jumbotron bg-light">
@@ -7,7 +15,7 @@
       </div>
 
       <div class="col-7">
-        <table class="table">
+        <table class="table table-responsive">
           <tr>
             <th>姓名：</th>
             <td><%= @person.name %></td>
@@ -16,24 +24,29 @@
             <th>性别：</th>
             <td><%= @person.gender %></td>
           </tr>
+
+          <tr>
+            <th>年级：</th>
+            <td><%= @person.period %></td>
+          </tr>
           <tr>
             <th>邮箱：</th>
             <td><%= @person.email %></td>
           </tr>
+          <% unless @person.blog.blank? %>
+              <tr>
+                <th>博客：</th>
+                <td><%= link_to @person.blog, @person.blog, target: '_blank' %>&nbsp;</td>
+              </tr>
+          <% end %>
+          <% unless @person.github.blank? %>
+              <tr>
+                <th>GitHub：</th>
+                <td><%= link_to @person.github, @person.github, target: '_blank' %></td>
+              </tr>
+          <% end %>
           <tr>
-            <th>入学年：</th>
-            <td><%= @person.period %></td>
-          </tr>
-          <tr>
-            <th>GitHub：</th>
-            <td><%= link_to "#{@person.name}的 Github", @person.github, target: '_blank' %></td>
-          </tr>
-          <tr>
-            <th>个人博客：</th>
-            <td><%= link_to "#{@person.name}的 Blog", @person.blog, target: '_blank' %></td>
-          </tr>
-          <tr>
-            <th>兴趣方向：</th>
+            <th>方向：</th>
             <td><%= @person.interest %></td>
           </tr>
         </table>

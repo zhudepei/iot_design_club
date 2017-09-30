@@ -1,25 +1,53 @@
+<style>
+  .card {
+    border: none;
+  }
+
+  .btn {
+
+  }
+
+  .btn-circle {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 1rem;
+    line-height: 1.428571429;
+    border-radius: 30px;
+  }
+</style>
 <br><br><br><br><br>
 <div class="container">
   <% if @people.count > 0 %>
-      <% @people.each do |item| %>
-          <button type="button" class="btn btn-info btn-block"><%= item[0] %></button>
-          <div class="jumbotron bg-light">
-            <div class="row">
-              <% item[1].each do |person| %>
-                  <div class="col-sm-3 my-3">
-                    <a href="<%= person_path(person) %>">
-                    <%= image_tag person.avatar, class: 'card-img-top' %>
-                      </a>
-                    <div class="card-body bg-white">
-                      <p class="card-text">
-                        <%= person.name %><br>
-                        <%= person.interest %><br>
-                        <%= person.period %><br>
-                        <%= person.email %>
-                      </p>
-                    </div>
-                  </div>
-              <% end %>
+      <% @people.each_with_index do |item, index| %>
+          <div class="row">
+            <div class="col-1">
+              <button type="button" disabled class="btn btn-lg btn-<%= %w(danger primary warning success info)[index % 6] %>
+               btn-circle "><%= item[0] %></button>
+            </div>
+            <div class="col-11">
+
+              <div class="jumbotron bg-light">
+                <div class="row">
+                  <% item[1].each do |person| %>
+
+                      <div class="card col-sm-3 my-3 bg-light" style="width: 20rem;">
+                        <a href="<%= person_path(person) %>">
+                          <%= image_tag person.avatar, class: 'card-img-top' %>
+                        </a>
+                        <div class="card-body bg-white">
+                          <p class="card-text small text-center ">
+                            <%= person.name %><br>
+                            <%= person.interest %><br>
+                            <%= person.email %>
+                          </p>
+                        </div>
+                      </div>
+                  <% end %>
+                </div>
+              </div>
+
             </div>
           </div>
       <% end %>
