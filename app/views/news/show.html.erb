@@ -9,8 +9,6 @@
   <p><%= @news.content.html_safe %></p>
 
 </div>
-<br>
-<br>
 <% if @news.previous %>
     <a id="newer" class="blog-nav" href="<%= news_path(@news.previous) %>">&lt;&nbsp;NEWER</a>
 <% end %>

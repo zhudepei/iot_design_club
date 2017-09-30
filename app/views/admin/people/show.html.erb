@@ -31,11 +31,11 @@
           </tr>
           <tr>
             <th>GitHub：</th>
-            <td><%= link_to "#{@person.name}的 Github", @person.github, target: '_blank' %></td>
+            <td><%= link_to @person.github, @person.github, target: '_blank' %></td>
           </tr>
           <tr>
             <th>个人博客：</th>
-            <td><%= link_to "#{@person.name}的 Blog", @person.blog, target: '_blank' %></td>
+            <td><%= link_to @person.github, @person.blog, target: '_blank' %></td>
           </tr>
           <tr>
             <th>兴趣方向：</th>

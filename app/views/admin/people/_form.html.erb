@@ -29,7 +29,7 @@
     </div>
 
     <div class="form-group row field">
-      <%= form.label :avatar, '*个人头像：', class: 'col-3 col-form-label' %>
+      <%= form.label :avatar, '*头像：', class: 'col-3 col-form-label' %>
       <div class="col-9">
         <%= form.file_field :avatar, id: :person_avatar, class: 'form-control' %>
       </div>
@@ -52,7 +52,7 @@
 
 
     <div class="form-group row field">
-      <%= form.label :blog, ' 个人博客(url)：', class: 'col-3 col-form-label' %>
+      <%= form.label :blog, ' 博客：', class: 'col-3 col-form-label' %>
       <div class="col-9">
         <%= form.text_field :blog, id: :person_blog, class: 'form-control' %>
         <small class="form-text text-muted">完整的 URL：http://your_url OR https://your_url</small>
@@ -60,9 +60,10 @@
     </div>
 
     <div class="form-group row field">
-      <%= form.label :interest, '*兴趣方向：', class: 'col-3 col-form-label' %>
+      <%= form.label :interest, '*主要方向：', class: 'col-3 col-form-label' %>
       <div class="col-9">
         <%= form.text_field :interest, id: :person_interest, class: 'form-control' %>
+        <small class="form-text text-muted">（Web前端、Web后端、Web全栈、iOS开发、Android开发、嵌入式开发 等）填一个即可</small>
       </div>
     </div>
 
