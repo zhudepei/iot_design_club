@@ -20,11 +20,9 @@
     font-size: 1rem;
     line-height: 1.428571429;
     border-radius: 35px;
+    position: absolute;
   }
 
-  .card {
-    border: none;
-  }
 
 </style>
 
@@ -36,22 +34,28 @@
 </div>
 <br>
 <br>
-<% @projects.each_with_index do |project, index| %>
-    <div class="container jumbotron">
-      <div class="row">
-        <div class="col-11">
-          <a href="<%= project_path(project) %>"><h5><%= project.name %></h5></a>
-          <p class="small text-muted"><%= project.intro %></p>
-        </div>
-        <div class="col-1">
-          <div class="text-right">
-            <button type="button" disabled
-                    class="btn btn-circle btn-<%= %w(danger primary warning success info)[project.done_date % 6] %> ">
-              <%= project.done_date %>
-            </button>
+<% if @projects.count > 0 %>
+
+    <% @projects.each_with_index do |item, index| %>
+        <div class="container">
+          <button type="button" disabled
+                  class="btn btn-circle btn-<%= %w(danger primary warning success info)[index % 6] %>">
+            <%= item[0] %>
+          </button>
+          <div class="row">
+            <% item[1].each do |project| %>
+            <div class="col-1">
+            </div>
+                <div class="col-11">
+                  <div class="container jumbotron">
+                    <a href="<%= project_path(project) %>"><h5><%= project.name %></h5></a>
+                    <p class="small text-muted"><%= project.intro %></p>
+                  </div>
+                </div>
+            <% end %>
           </div>
         </div>
-      </div>
-    </div>
+    <% end %>
+
 <% end %>
 

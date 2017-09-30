@@ -1,7 +1,6 @@
 <% if @slides.count > 0 %>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-
         <% @slides.each_with_index do |slide, index| %>
             <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
         <% end %>

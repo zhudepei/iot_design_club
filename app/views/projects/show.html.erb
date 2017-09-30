@@ -1,12 +1,14 @@
 <br><br><br><br><br>
-<div class="container jumbotron bg-light">
-  <p class="text-muted"><%= @project.done_date %></p>
-
-  <div class="text-center"><h3><%= @project.name %></h3></div>
-
-  <p class="text-muted my-5"><%= @project.intro %></p>
-
-  <p><%= @project.content.html_safe %></p>
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10 jumbotron">
+      <div class="container">
+        <p class="text-muted"><%= @project.done_date %></p>
+        <div class="text-center"><h3><%= @project.name %></h3></div>
+        <p class="text-muted my-5"><%= @project.intro %></p>
+        <p><%= @project.content.html_safe %></p>
+      </div>
+    </div>
+  </div>
 </div>
 

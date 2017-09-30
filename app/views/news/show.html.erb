@@ -1,14 +1,17 @@
 <br><br><br><br><br>
-<div class="container jumbotron bg-light">
-  <p class="text-muted"><%= @news.created_at.to_date %></p>
-
-  <div class="text-center"><h3><%= @news.title %></h3></div>
-
-  <p class="text-muted my-5"><%= @news.brief %></p>
-
-  <p><%= @news.content.html_safe %></p>
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10 jumbotron">
+      <div class="container">
+        <p class="text-muted"><%= @news.created_at.to_date %></p>
+        <div class="text-center"><h3><%= @news.title %></h3></div>
+        <p class="text-muted my-5"><%= @news.brief %></p>
+        <p><%= @news.content.html_safe %></p>
+      </div>
+    </div>
+  </div>
 </div>
+<br><br>
 <% if @news.previous %>
     <a id="newer" class="blog-nav" href="<%= news_path(@news.previous) %>">&lt;&nbsp;NEWER</a>
 <% end %>

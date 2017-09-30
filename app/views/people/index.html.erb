@@ -9,8 +9,10 @@
 <div class="container">
   <% if @people.count > 0 %>
       <% @people.each_with_index do |item, index| %>
-          <button type="button" disabled class="btn btn-block btn-<%= %w(danger primary warning success info)[index % 6] %>
-               btn-circle "><%= item[0] %></button>
+          <button type="button" disabled
+                  class="btn btn-block btn-<%= %w(danger primary warning success info)[index % 6] %>">
+            <%= item[0] %>
+          </button>
 
           <div class="row">
             <% item[1].each do |person| %>
