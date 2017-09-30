@@ -12,25 +12,23 @@
           <button type="button" disabled class="btn btn-block btn-<%= %w(danger primary warning success info)[index % 6] %>
                btn-circle "><%= item[0] %></button>
 
-          <div class="jumbotron">
-            <div class="row">
-              <% item[1].each do |person| %>
-
-                  <div class="card col-sm-3 my-3" style="width: 20rem;">
-                    <a href="<%= person_path(person) %>">
-                      <%= image_tag person.avatar, class: 'card-img-top' %>
-                    </a>
-                    <div class="card-body bg-white">
-                      <p class="card-text small text-center ">
-                        <%= person.name %><br>
-                        <%= person.interest %><br>
-                        <%= person.email %>
-                      </p>
-                    </div>
+          <div class="row">
+            <% item[1].each do |person| %>
+                <div class="card col-sm-3 my-3" style="width: 20rem;">
+                  <a href="<%= person_path(person) %>">
+                    <%= image_tag person.avatar, class: 'card-img-top' %>
+                  </a>
+                  <div class="card-body bg-light">
+                    <p class="card-text small text-center ">
+                      <%= person.name %><br>
+                      <%= person.interest %><br>
+                      <%= person.email %>
+                    </p>
                   </div>
-              <% end %>
-            </div>
+                </div>
+            <% end %>
           </div>
+          <br>
 
       <% end %>
   <% end %>
