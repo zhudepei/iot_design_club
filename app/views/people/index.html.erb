@@ -12,11 +12,11 @@
           <button type="button" disabled class="btn btn-block btn-<%= %w(danger primary warning success info)[index % 6] %>
                btn-circle "><%= item[0] %></button>
 
-          <div class="jumbotron bg-light">
+          <div class="jumbotron">
             <div class="row">
               <% item[1].each do |person| %>
 
-                  <div class="card col-sm-3 my-3 bg-light" style="width: 20rem;">
+                  <div class="card col-sm-3 my-3" style="width: 20rem;">
                     <a href="<%= person_path(person) %>">
                       <%= image_tag person.avatar, class: 'card-img-top' %>
                     </a>

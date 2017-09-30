@@ -25,11 +25,20 @@
       </div>
     </div>
 
+    <div class="form-group row field">
+      <%= form.label :done_date, '完成时间：', class: 'col-3 col-form-label' %>
+      <div class="col-9">
+        <%= form.number_field :done_date, id: :project_done_date, class: 'form-control' %>
+        <small class="text-muted">只需填写年份</small>
+      </div>
+    </div>
+
     <div class="field">
       <%= form.label :content, '项目详情：' %>
       <%= form.cktext_area :content, ckeditor: { language: 'zh', toolbar: 'Full' }, id: :project_content %>
     </div>
 
+    <br>
     <div class="text-right actions">
       <%= form.submit '确认', class: 'btn btn-info' %>
     </div>

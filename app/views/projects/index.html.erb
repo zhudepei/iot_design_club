@@ -22,6 +22,10 @@
     border-radius: 35px;
   }
 
+  .card {
+    border: none;
+  }
+
 </style>
 
 <div class="projects-image">
@@ -33,7 +37,7 @@
 <br>
 <br>
 <% @projects.each_with_index do |project, index| %>
-    <div class="container jumbotron bg-light">
+    <div class="container jumbotron">
       <div class="row">
         <div class="col-11">
           <a href="<%= project_path(project) %>"><h5><%= project.name %></h5></a>
@@ -41,8 +45,9 @@
         </div>
         <div class="col-1">
           <div class="text-right">
-            <button type="button" disabled class="btn btn-lgbt btn-<%= %w(danger primary warning success info)[index % 6] %> btn-circle ">
-              <%= project.created_at.year %>
+            <button type="button" disabled
+                    class="btn btn-circle btn-<%= %w(danger primary warning success info)[project.done_date % 6] %> ">
+              <%= project.done_date %>
             </button>
           </div>
         </div>
